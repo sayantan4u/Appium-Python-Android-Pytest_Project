@@ -24,6 +24,7 @@ phase_report_key = StashKey[Dict[str, CollectReport]]()
 
 
 @pytest.hookimpl(wrapper=True, tryfirst=True)
+@allure.title("Prepare for the tests")
 def pytest_runtest_makereport(item, call):
     # execute all other hooks to obtain the report object
     rep = yield
